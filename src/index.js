@@ -18,6 +18,7 @@ function searchCountry(e) {
     const countryName = e.target.value.trim();
     if (countryName === '') { 
         resetMarkup();
+        return;
     }
     fetchCountries(countryName).then(renderCountries).catch(error => {
         Notify.failure("Oops, there is no country with that name");
