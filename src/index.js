@@ -34,7 +34,7 @@ function renderCountries(countries) {
     } else {
         resetMarkup();
         markupInfo(countries);
-    }
+    } 
 }
 
 function resetMarkup() { 
