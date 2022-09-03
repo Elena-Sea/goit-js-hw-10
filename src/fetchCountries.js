@@ -1,3 +1,6 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import 'notiflix/dist/notiflix-3.2.5.min.css';
+
 const ENDPOINT = 'https://restcountries.com/v3.1/name';
 const OPTIONS = '?fields=name,capital,population,flags,languages';
 
@@ -9,8 +12,9 @@ export function fetchCountries(name) {
     }
     return response.json();
   })
-  .catch(error => {
-    alert(error)  });
+      .catch(error => {
+    Notify.failure(`${error}`);
+  });
 }
 
 
